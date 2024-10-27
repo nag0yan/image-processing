@@ -1,17 +1,10 @@
-// import * as cdk from 'aws-cdk-lib';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as ImageProcessing from '../lib/image-processing-stack';
+import { App } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { ImageProcessingStack } from "../lib/image-processing-stack";
 
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/image-processing-stack.ts
-test('SQS Queue Created', () => {
-//   const app = new cdk.App();
-//     // WHEN
-//   const stack = new ImageProcessing.ImageProcessingStack(app, 'MyTestStack');
-//     // THEN
-//   const template = Template.fromStack(stack);
-
-//   template.hasResourceProperties('AWS::SQS::Queue', {
-//     VisibilityTimeout: 300
-//   });
+test("Snapshot is matched", () => {
+	const app = new App();
+	const stack = new ImageProcessingStack(app, "MyTestStack");
+	const template = Template.fromStack(stack);
+	expect(template.toJSON()).toMatchSnapshot();
 });
