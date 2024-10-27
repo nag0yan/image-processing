@@ -1,12 +1,16 @@
 {
 	"name": "image-processing",
 	"version": "0.1.0",
+	"module": "mjs",
 	"bin": {
 		"image-processing": "bin/image-processing.js"
 	},
 	"scripts": {
 		"build": "tsc",
+		"watch": "tsc -w",
 		"test": "jest",
+		"testu": "jest -u",
+		"testf": "cdk synth -q && echo 'CDK synth is completed!' && sam local invoke Function76856677 -e lib/lambda/events/test.json -t cdk.out/ImageProcessingStack.template.json",
 		"pc": "npx biome format --write && npm run test"
 	},
 	"devDependencies": {
@@ -22,6 +26,7 @@
 		"typescript": "~5.6.2"
 	},
 	"dependencies": {
+		"@types/aws-lambda": "^8.10.145",
 		"aws-cdk-lib": "2.164.1",
 		"constructs": "^10.0.0",
 		"source-map-support": "^0.5.21"

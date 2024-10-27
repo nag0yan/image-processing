@@ -6,3 +6,9 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+# AWS SAM
+.aws-sam
+
+# TS build
+dist

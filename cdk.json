@@ -1,5 +1,5 @@
 {
-	"app": "npx ts-node --prefer-ts-exts bin/image-processing.ts",
+	"app": "npx ts-node --transpileOnly --prefer-ts-exts bin/image-processing.ts",
 	"watch": {
 		"include": ["**"],
 		"exclude": [
